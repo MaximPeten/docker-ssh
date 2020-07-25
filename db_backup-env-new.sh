@@ -27,7 +27,7 @@ done
 
 mv $DATE.backup/*.sql $DATE.backup/db \
 	&& tar --remove-files -zcvf $ARCHIVE.tar.gz $DATE.backup/ \
-	&& scp -o StrictHostKeyChecking=no -i "$OUTPUT/.ssh/docker_host" "$OUTPUT/$ARCHIVE.tar.gz" $HOST_USER@$D_HOST:~/
+	&& scp -o StrictHostKeyChecking=no -i "$OUTPUT/.ssh/$DOCKER_HOST_KEY" "$OUTPUT/$ARCHIVE.tar.gz" $HOST_USER@$D_HOST:~/
 
 #slack message if archive exist
 if [[ -e $OUTPUT/$ARCHIVE.tar.gz ]]; then
