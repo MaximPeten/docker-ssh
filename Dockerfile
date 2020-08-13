@@ -17,7 +17,7 @@ RUN apt-get -y update \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY db_backup-env-new.sh /
+COPY devopscamp-mpeten /devopscamp-mpeten
 COPY docker-entrypoint.sh /
 
 EXPOSE 22
